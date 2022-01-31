@@ -6,10 +6,8 @@ authors = ["Felipe Sassi <felipe.sassi@datarisk.io>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pandas = "1.4.0"
-numpy = "1.22.1"
-mypy = "0.931"
-black = "22.1.0"
+pandas = "^1.4.0"
+numpy = "^1.22.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

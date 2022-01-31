@@ -1,5 +1,5 @@
 import pandas as pd
-from random_data_gen.transactional_features import (
+from random_data_gen.features.transactional_features import (
     generate_create_date_array,
     generate_consumer_ids,
     generate_transaction_spend,
@@ -25,7 +25,7 @@ class DataGenerator:
         self.end_date = end_date
 
     def __call__(self):
-
+"""
         date_list = generate_create_date_array(
             self.n_rows, self.start_date, self.end_date
         )

@@ -3,7 +3,7 @@ import numpy as np
 
 
 def generate_create_date_array(n_rows: int, start_date: str, end_date: str) -> list:
-
+   
     return list(pd.date_range(start=start_date, end=end_date, periods=n_rows))
 
 
