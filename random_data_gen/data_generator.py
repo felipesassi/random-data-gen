@@ -25,7 +25,7 @@ class DataGenerator:
         self.end_date = end_date
 
     def __call__(self):
-"""
+
         date_list = generate_create_date_array(
             self.n_rows, self.start_date, self.end_date
         )
