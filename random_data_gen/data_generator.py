@@ -6,7 +6,7 @@ from random_data_gen.features.transactional_features import (
 )
 
 
-class DataGenerator:
+class TransactionalDataGenerator:
     def __init__(
         self,
         n_rows: int,
