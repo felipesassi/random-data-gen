@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
+import random
 
 
-def generate_create_date_array(n_rows: int, start_date: str, end_date: str) -> list:
+def generate_create_date_array(n_rows: int, first_transaction_date: str, last_transaction_date: str) -> list:
     """
     Function used to generate random dates from start_date to end_date.
 
@@ -10,9 +11,9 @@ def generate_create_date_array(n_rows: int, start_date: str, end_date: str) -> l
     ----------
     n_rows : int
         Number of rows in dataframe.
-    start_date : str
+    first_transaction_date : str
         First date to generate interval.
-    end_date : str
+    last_transaction_date : str
         Last date to generate interval.
 
     Returns
@@ -20,7 +21,10 @@ def generate_create_date_array(n_rows: int, start_date: str, end_date: str) -> l
     list
         List of dates.
     """
-    return list(pd.date_range(start=start_date, end=end_date, periods=n_rows))
+    created_at_list = list(pd.date_range(start=first_transaction_date, end=last_transaction_date, periods=n_rows))
+    random.shuffle(created_at_list)
+
+    return created_at_list
 
 
 def generate_consumer_ids(n_rows: int, n_consumers: int) -> list:
@@ -43,9 +47,7 @@ def generate_consumer_ids(n_rows: int, n_consumers: int) -> list:
     return list(np.random.choice(consumer_ids, n_rows))
 
 
-def generate_transaction_spend(
-    n_rows: int, mean_spend: float, std_spend: float
-) -> list:
+def generate_transaction_spend(n_rows: int, transaction_mean_value: float, transaction_std_value: float) -> list:
     """
     Function used to generate consumers spend. The spend is sampled from
     a normal distribution curve.
@@ -54,9 +56,9 @@ def generate_transaction_spend(
     ----------
     n_rows : int
         Number of rows in dataframe.
-    mean_spend : float
+    transaction_mean_value : float
         Mean spend to normal curve creation.
-    std_spend : float
+    transaction_std_value : float
         Standard deviation of spend to normal curve creation.
 
     Returns
@@ -65,4 +67,4 @@ def generate_transaction_spend(
         List of spend.
     """
 
-    return list(np.random.normal(mean_spend, std_spend, n_rows))
+    return list(np.random.normal(transaction_mean_value, transaction_std_value, n_rows))
