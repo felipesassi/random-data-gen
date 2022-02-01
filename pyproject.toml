@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "random-data-gen"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Felipe Sassi <felipe.sassi@datarisk.io>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
