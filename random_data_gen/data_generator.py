@@ -10,7 +10,7 @@ class DataGenerator:
     def __init__(
         self,
         n_rows: int,
-        n_ids: int,
+        n_consumers: int,
         mean_spend: float,
         std_spend: float,
         start_date: str,
@@ -18,7 +18,7 @@ class DataGenerator:
     ) -> None:
 
         self.n_rows = n_rows
-        self.n_ids = n_ids
+        self.n_consumers = n_consumers
         self.mean_spend = mean_spend
         self.std_spend = std_spend
         self.start_date = start_date
@@ -29,7 +29,7 @@ class DataGenerator:
         date_list = generate_create_date_array(
             self.n_rows, self.start_date, self.end_date
         )
-        consumer_list = generate_consumer_ids(self.n_rows, self.n_ids)
+        consumer_list = generate_consumer_ids(self.n_rows, self.n_consumers)
         transactional_spend_list = generate_transaction_spend(
             self.n_rows, self.mean_spend, self.std_spend
         )
