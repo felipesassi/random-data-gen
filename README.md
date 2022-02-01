@@ -70,7 +70,7 @@ The shape of this dataframe is defined by the parameter *n_rows*.
 
 ## Contribute
 
-To contribute you need to install Poetry.
+To contribute you need to install [Poetry](https://python-poetry.org/).
 
 After install, you need to clone this repo and run the following command:
 
@@ -78,10 +78,19 @@ After install, you need to clone this repo and run the following command:
 poetry install -n
 ```
 
-To test your changes you need to run:
+Before send the code to the repo, you need to run:
+
+```
+make format
+```
+
+To apply the project style to the new code.
+
+And after that, run:
 
 ```
 make check
 ```
 
-This command will format your code with Black and run all tests.
+This command will check your code with flake8 and pytest.
+
