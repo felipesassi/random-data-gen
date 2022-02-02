@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "random-data-gen"
-version = "0.1.1"
-description = ""
+version = "0.1.2"
+description = "Package to generate random transactional data"
 authors = ["Felipe Sassi <felipesassi@outlook.com>"]
 
 readme = "README.md"
